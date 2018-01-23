@@ -1,7 +1,7 @@
 """
 I wrote this file in my first semester of my computer science degree. This file was an experiment to see how division worked. In the first
 iteration of this, I didn't have the divide by zero catch, to see why mechanical calculators handled 0/1 the way they did. The plan for this 
-file before abandonment was to do this sort of thing to all mathematicaloperators like multiplication, addition, subtraction, powers, etc.
+file before abandonment was to do this sort of thing to all mathematical operators like multiplication, addition, subtraction, powers, etc.
 I lost interest before I reached that point, however.
 """
 
