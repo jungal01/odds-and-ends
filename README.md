@@ -7,5 +7,5 @@ It should be noted that some of this code was written long before I understood p
 - **ackermann.py**: the ackermann and inverse ackermann functions
 - **division.py**: division in the style of an abacus
 - **fibonacci.py**: caching experiment with the fibonacci sequence
-- **queue.py**: a queue implemented with a dictionary
 - **helloWorld.asm**: my first attempt at assembly
+- **queue.py**: a queue implemented with a dictionary
