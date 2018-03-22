@@ -8,5 +8,6 @@ It should be noted that some of this code was written long before I understood p
 - **division.py**: division in the style of an abacus
 - **fibonacci.py**: caching experiment with the fibonacci sequence
 - **helloWorld.asm**: my first attempt at assembly
+- **prolog-install.sh**: script for installing prolog in ubuntu
 - **queue.py**: a queue implemented with a dictionary
 - **turtletree.py**: drawing a random tree with turtle
