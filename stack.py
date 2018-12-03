@@ -1,5 +1,6 @@
 """
-The only deviation with this stack compared to a normal one is that it has a print method on it, which I think simplifies debugging code.
+The only deviation with this stack compared to a normal one is that it has a
+print method on it, which I think simplifies debugging code.
 """
 
 
@@ -30,7 +31,7 @@ class Stack:
 
     def __len__(self):
         return self.size()
-    
+
     def __str__(self):
         allItems = []
         for item in self.__item:
