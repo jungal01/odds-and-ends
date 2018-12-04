@@ -20,7 +20,9 @@ remains true regardless of how high the recursion limit is set to.
 
 Some more debugging has proven to show that at 20000, the cached function
 will segfault, while the memoized funcion works as expected. This remains true,
-regardless of how large the lru_cache is set to.
+regardless of how large the lru_cache is set to. More testing has shown that
+cached fib will intermittantly fail at 1185, is hit or miss on 1186, and will
+always succeed on 1184
 
 In the terminal REPL, memoized fibonacci was able to be steadily stepped up to
 260_000 at 5-10k intervals, proving definitively that this has nothing to do
@@ -86,7 +88,7 @@ def main():
 
     start = time.time()
     for _ in range(5):
-        cached_fib(15_000)
+        cached_fib(9_300)
     end = time.time()
 
     print('cached fibonacci: {}' .format(end-start))
@@ -114,4 +116,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    cached_fib(1_185)
+    print('done')
+    #main()
