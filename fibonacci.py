@@ -32,6 +32,9 @@ locked the computer before completing the calculation. The cached fib is far
 more sensitive with the REPL, with a segfault occurring on any step above 10k.
 I may be wrong, but this is starting to appear as if the actual problem has
 something to do with how dictionaries and the cache are implemented.
+
+It takes insanely long, but the naive function seemingly will always work when
+the memoized function works.
 Further experimentation is required before a bug report gets filed.
 """
 
@@ -81,21 +84,21 @@ def reddit_fib(n):
 def main():
     start = time.time()
     for _ in range(5):
-        memo_fib(15_000)
+        memo_fib(5_000)
     end = time.time()
 
     print('memoized fibonacci: {}' .format(end-start))
 
     start = time.time()
     for _ in range(5):
-        cached_fib(9_300)
+        cached_fib(5_000)
     end = time.time()
 
     print('cached fibonacci: {}' .format(end-start))
 
     start = time.time()
     for _ in range(5):
-        bernat_fib(15_000)
+        bernat_fib(5_000)
     end = time.time()
 
     print('bernat fibonacci: {}' .format(end-start))
@@ -109,13 +112,11 @@ def main():
 
     start = time.time()
     for _ in range(5):
-        naive_fib(15_000)
+        naive_fib(5_000)
     end = time.time()
 
     print('naive fibonacci: {}' .format(end-start))
 
 
 if __name__ == "__main__":
-    cached_fib(1_185)
-    print('done')
-    #main()
+    main()
