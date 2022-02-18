@@ -49,15 +49,10 @@ def cli_prompt():
 
 
 def main():
-    """
     old_file, new_file, output_file = cli_prompt()
     old_data = open(old_file)
     new_data = open(new_file)
     output = open(output_file, "w")
-    """
-    old_data = open("QAMN_old_info.csv")
-    new_data = open("QAMN_new_info.csv")
-    output = open("output.csv", "w")
     
     old_list = list(old_data.read().split('\n'))
     new_list = list(new_data.read().split('\n'))
@@ -80,8 +75,7 @@ def main():
         temp_data[2], temp_data[3] = temp_data[3], temp_data[2]
         temp_data[4], temp_data[3] = temp_data[3], temp_data[4]
         # This isolates the name of the supervisor. WorkDay manager formatting
-        # all follows the same format, so this can be relied upon in most cases
-        print(temp_data[0], temp_data[3], len(temp_list))
+        # all follows the same format, so this can be relied upon in most casesS
         temp_data[3] = temp_data[3].split("(")[2].strip()
         temp_list.append(','.join(temp_data))
         new_people.add(temp_data[0])
@@ -99,8 +93,7 @@ def main():
     # write to the output file. The first line is the table header
     output.write('Name (Employee ID),Job Title,Card Signer,Manager,Work Email,Home Address,Home City,Home State,Home Zip,Personal Email,Personal Phone,Twitter Handle,Discord Handle,Primary Contact,ABK National OC,Committee,Attended Past Meeting?,Attend 2/16 OC Meeting?,Invited to Discord?,Assessment,Unit Eligible?,Last 1:1 Contact,Notes\n')
     for final_data in output_list:
-        output.write(final_data)
-        output.write('\n')
+        output.write(final_data+'\n')
         
     old_data.close()
     new_data.close()

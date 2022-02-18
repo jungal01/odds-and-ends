@@ -6,11 +6,15 @@ It should be noted that some of this code was written long before I understood p
 # File explanations
 - **ackermann.py**: the ackermann and inverse ackermann functions
 - **call-compiler**: a modular script for simplistic compilation of source code files
+- **devSetup.sh**: installs several programming languages and their compilers for Ubuntu
 - **division.py**: division in the style of an abacus
 - **docker-ubuntu-install.sh**: does exactly as described
 - **fibonacci.py**: benchmarking various fibonacci algorithms
 - **helloWorld.asm**: my first attempt at assembly
-- **prolog-install.sh**: script for installing prolog in ubuntu
+- **md-to-html.py**: a simple converter to turn MarkDown into HTML
+- **prolog-install.sh**: script for installing prolog in Ubuntu
 - **queue.py**: a queue implemented with a dictionary
 - **stack.py**: just a normal stack, with the added ability to print it
+- **tex-installer.sh**: insalls TeX and a TeX editor for Ubuntu
 - **turtletree.py**: drawing a random tree with turtle
+- **WDE-csv.py**: a CLI tool to translate the data from the WorkDay exporting tool into a tracker for Unionizing
