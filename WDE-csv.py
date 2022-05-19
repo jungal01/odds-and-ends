@@ -11,6 +11,10 @@ primary advantage to this file is that it has less engineering overhead.
 WorkDay exports exclusively to excel formatting, so it will need to be manually
 converted to csv to use this script. Some manual massaging is also required on
 the CSV file to format correctly, such as deleting or combining columns.
+------------------------------------------------------------------------------
+Known issues: attempting to use the full functionality of this script causes
+all data left of the name to shift up one column. While this is being fixed,
+cleaning up the data is still fully functional.
 """
 
 
@@ -49,12 +53,12 @@ def cli_prompt():
 
 
 def main():
-    old_file, new_file, output_file = cli_prompt()
-    old_data = open(old_file)
-    new_data = open(new_file)
-    output = open(output_file, "w")
+    #old_file, new_file, output_file = cli_prompt()
+    #old_data = open(old_file)
+    new_data = open("new_folks.csv")
+    output = open("output.csv", "w")
     
-    old_list = list(old_data.read().split('\n'))
+    #old_list = list(old_data.read().split('\n'))
     new_list = list(new_data.read().split('\n'))
     output_list = []
     new_people = set()
@@ -75,17 +79,19 @@ def main():
         temp_data[2], temp_data[3] = temp_data[3], temp_data[2]
         temp_data[4], temp_data[3] = temp_data[3], temp_data[4]
         # This isolates the name of the supervisor. WorkDay manager formatting
-        # all follows the same format, so this can be relied upon in most casesS
+        # all follows the same format, so this can be relied upon in most cases
+        print(temp_data[0])
         temp_data[3] = temp_data[3].split("(")[2].strip()
         temp_list.append(','.join(temp_data))
         new_people.add(temp_data[0])
     
+    """
     # The good stuff; comparing lists to write to output
     for line in range(len(old_list)):
         if old_list[line].split(',')[0] in new_people:
             current_people.add(old_list[line].split(',')[0])
             output_list.append(old_list[line])
-            
+    S"""     
     for line in range(len(temp_list)):
         if temp_list[line].split(',')[0] not in current_people:
             output_list.append(temp_list[line])
@@ -95,7 +101,7 @@ def main():
     for final_data in output_list:
         output.write(final_data+'\n')
         
-    old_data.close()
+    #old_data.close()
     new_data.close()
     output.close()
     
